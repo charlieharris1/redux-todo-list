@@ -9,6 +9,11 @@ const todos = (state = [], action) => {
           completed: false
         }
       ]
+    case 'FETCH_TODOS_SUCCESS':
+      return [
+        ...state,
+        ...action.todos,
+      ]
     case 'TOGGLE_TODO':
       return state.map(todo =>
         todo.id === action.id ? { ...todo, completed: !todo.completed } : todo

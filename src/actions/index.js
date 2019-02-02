@@ -1,7 +1,9 @@
-let nextTodoId = 0
+import * as api from '../api';
+
+const nextTodoId = Math.random;
 export const addTodo = text => ({
   type: 'ADD_TODO',
-  id: nextTodoId++,
+  id: nextTodoId(),
   text
 })
 
@@ -14,6 +16,12 @@ export const toggleTodo = id => ({
   type: 'TOGGLE_TODO',
   id
 })
+
+export const fetchTodos = () => {
+  return dispatch => 
+    api.getTodos()
+      .then((todos) => dispatch({ type: 'FETCH_TODOS_SUCCESS', todos }))
+};
 
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
