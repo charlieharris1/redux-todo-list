@@ -5,11 +5,10 @@ import VisibleTodoList from '../containers/VisibleTodoList'
 
 const App = () => (
   <div>
-    <h1>React & Redux Todo List</h1>
-    {/* <AddTodo />
+    <AddTodo />
     <VisibleTodoList />
-    <Footer /> */}
+    <Footer />
   </div>
 )
 
-export default App;
+export default App
